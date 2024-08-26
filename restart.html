@@ -6,32 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Congrats!</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <style>
+      * {
+        background-color: rgba(0, 234, 255, 0.656);
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <div id="end" class="flex-center flex-column">
-        <h1 id="finalScore"></h1>
-        <form>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            placeholder="username"
-          />
-          <button
-            type="submit"
-            class="btn"
-            id="saveScoreBtn"
-            onclick="saveHighScore(event)"
-            disabled
-          >
-            Save
-          </button>
-        </form>
-        <a class="btn" href="/quiz.html">Play Again</a>
-        <a class="btn" href="/">Go Home</a>
+
+      <h1 id="finalScore"></h1>
+
+      <form>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="username"
+        />
+        <button
+          type="submit"
+          class="btn"
+          id="saveScoreBtn"
+          onclick="saveHighScore(event)"
+          disabled
+        >
+          Save
+        </button>
+      </form>
+      <a class="btn" href="./quiz.html">Play Again</a>
+      <a class="btn" href="./index.html">Go Home</a>
+
+
+
+<!-- 
+      <div class="result_box">
+        <div class="score_text"></div>
       </div>
-    </div>
+      <button class="restart" onclick="restart_quiz()">Restart</button>
+
+      <button class="quit" onclick="quit_quiz()">Quit</button>
+    </div> -->
+
+    <!-- <script src="scripts/quiz.js"></script> -->
     <script src="scripts/restart.js"></script>
   </body>
 </html>
