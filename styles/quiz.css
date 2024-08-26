@@ -13,7 +13,6 @@
   box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.25);
 }
 
-/* HUD */
 
 #hud {
   display: flex;
@@ -76,9 +75,6 @@
   width: 100%;
   padding: 25px;
   cursor: pointer;
-
-  /* background-color: rgba(0, 221, 255, 0.423);
-  margin: 20px; */
 }
 
 .correct {
@@ -87,26 +83,12 @@
 
 .incorrect {
   background-color: #dc3545;
-/* 
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  font-size: 12px;
-  border: 3px solid #3f4868;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s;
-  overflow: hidden; */
 }
 
 .choice-text.disabled {
   pointer-events: none;
 }
 .icon {
-  /* height: 100%;
-  width: 100%;  
-  border: none; */
   margin-left: 400px;
   height: 25px;
   width: 25px;
@@ -123,22 +105,12 @@
   font-weight: 900;
 }
 
-
-/* .incorrect:before {
-  content: '\2713'; 
-  color: #fff; 
-  margin: 0px 3px 10px;
-  font-size: 11px;
-  font-weight: 900;
-} */
-
 .center .button {
   background-color: transparent;
 
   border: none;
   width: fit-content;
   height: fit-content;
-  /* display: inline-block; */
   display: none;
   justify-self: end;
 }
