@@ -6,34 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Congrats!</title>
     <link rel="stylesheet" href="styles/style.css" />
-    <style>
-      * {
-        background-color: rgba(0, 234, 255, 0.656);
-      }
-    </style>
   </head>
   <body>
     <div class="container">
 
-      <h1 id="finalScore"></h1>
+      <div class="total">
+        <h1 id="finalScore"></h1> out of 52
 
-      <form>
-        <input
-          type="text"
-          name="username"
-          id="username"
-          placeholder="username"
-        />
-        <button
-          type="submit"
-          class="btn"
-          id="saveScoreBtn"
-          onclick="saveHighScore(event)"
-          disabled
-        >
-          Save
-        </button>
-      </form>
+      </div>
+
       <a class="btn" href="./quiz.html">Play Again</a>
       <a class="btn" href="./index.html">Go Home</a>
 
