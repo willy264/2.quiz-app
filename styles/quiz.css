@@ -11,6 +11,7 @@
   border: 5px outset rgba(192, 188, 188, 0.7);
   backdrop-filter: blur(25px);
   box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.25);
+  overflow: hidden;
 }
 
 
@@ -128,13 +129,17 @@
   font-weight: 500;
   border-color: #000;
 }
-
-
-
-
 .timer {
   display: flex;
   gap: 30px;
+  position: relative;
+  left: 300px;
+  right: 0;
+}
+.timer .time_text {
+  position: relative;
+  left: 150px;
+  top: -50px;
 }
 .timer .circle {
   position: relative;
@@ -200,4 +205,48 @@
   font-weight: 500;
   letter-spacing: 0.1em;
   z-index: 10;
+}
+.timer div span p {
+  font-size: 9px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width:1000px) {
+  .timer {
+    left: 0px;
+    top: 20px;
+  }
+  .timer .time_text {
+    display: none;
+  }
+}
+
+@media (max-width:650px) {
+  .center {
+    width: 100%;
+  }
+}
+
+@media (max-width:500px) {
+  .center {
+    padding: 0;
+  }
+  #hud {
+    display: block;
+  }
+  .timer {
+    left: 100px;
+  }
+  .choice-container {
+    width: 100%;
+  }
+  #progressBar {
+    width: 200px;
+    margin-left: 100px;
+  }
+  #progressText {
+    font-size: 15px;
+    margin: 15px 0 -10px;
+  }
 }

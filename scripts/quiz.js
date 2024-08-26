@@ -508,12 +508,8 @@ startTimer = (time) =>  {
     time--
 
     ss.style.strokeDashoffset = 0 - (440 * time) / 15;
-    timeCount.innerHTML = time + '<br><span>Seconds</span>'
+    timeCount.innerHTML = time + '<br><p>Seconds</p>'
 
-    if (time < 9) {
-      let addZero = timeCount.textContent;
-      timeCount.textContent = `0${addZero}`
-    }
     if (time < 1) {
       clearInterval(counter)
       setTimeout(() => {

@@ -87,22 +87,23 @@ body {
   align-items: center;
 }
 .container .box .section h1 {
-  font-size: 65px;
-  
+  font-size: 55px;
 }
 .container .box .section h3 {
-  font-size: 26px;
+  font-size: 18px;
 }
 .container .box .section ul {
   display: grid;
   gap: 10px;
 }
+.container .box .section ul li {
+  font-size: 12px;
+}
 .button {
+  border-color: transparent;
   margin-top: 50px;
   display: flex;
-  justify-content: space-evenly;
-}
-.button a {
+  justify-content: space-evenly; 
   padding: 10px 20px;
   border: 1px solid #fff;
   cursor: pointer;
@@ -110,9 +111,73 @@ body {
   font-size: 15px;
   transition: all 1s ease;
 }
-.button a:hover {
+.button:hover {
   background-color: #fff;
   color: #000;
   font-weight: 500;
   border-color: #000;
+}
+.contain {
+  z-index: 10;
+  display: grid;
+  grid-template-rows: repeat(2, 100px);
+  height: 80%;
+  width: 75%;
+  padding: 0 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  justify-items: center;
+  align-content: center;
+  border-top-left-radius: 130px;
+  border-bottom-right-radius: 130px;
+  border: 5px outset rgba(192, 188, 188, 0.7);
+  backdrop-filter: blur(25px);
+  box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.25);
+}
+.total {
+  display: flex;
+  text-align: center;
+  font-size: 30px;
+  align-items: center;
+}
+.dis {
+  display: flex;
+  align-items: center;
+}
+.dis button {
+  margin: 10px;
+  background-color: transparent;
+}
+.dis button a:hover {
+  color: #000;
+}
+
+
+
+@media (max-width:1000px) {
+  .container::after {  
+    height: 100px;
+    width: 100px;
+    transform: translate(220px, 90px);
+  }
+  .container .box .section{
+    grid-template-rows: 100px 50px .1fr 50px;
+  }
+  .container .box .section h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width:550px) {
+  .container .box {
+    width: 100%;
+  }
+  .container::after {  
+    display: none;
+  }
+  .container .box .section h1 {
+    font-size: 35px;
+  }
+  .container .box .section ul li {
+    font-size: 9px;
+  }
 }
