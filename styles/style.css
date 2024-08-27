@@ -170,6 +170,8 @@ body {
 @media (max-width:550px) {
   .container .box {
     width: 100%;
+    border-top-left-radius: 60px;
+    border-bottom-right-radius: 60px;
   }
   .container::after {  
     display: none;

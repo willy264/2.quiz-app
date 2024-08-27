@@ -6,6 +6,7 @@
   background-color: rgba(255, 255, 255, 0.1);
   z-index: 10;
   display: grid;
+  grid-template-columns: 1fr;
   border-top-left-radius: 130px;
   border-bottom-right-radius: 130px;
   border: 5px outset rgba(192, 188, 188, 0.7);
@@ -13,13 +14,18 @@
   box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.25);
   overflow: hidden;
 }
-
-
-#hud {
-  display: flex;
-  justify-content: space-between;
+.enter {
+  display: grid;
+  grid-template-columns: 1fr .3fr;
+  grid-template-rows: 100px;
 }
-
+#hud {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+}
 .hud-prefix {
   text-align: center;
   font-size: 2rem;
@@ -28,7 +34,6 @@
 .hud-main-text {
   text-align: center;
 }
-
 #progressBar {
   width: 320px;
   height: 30px;
@@ -86,7 +91,7 @@
   background-color: #dc3545;
 }
 
-.choice-text.disabled {
+/* .choice-text.disabled {
   pointer-events: none;
 }
 .icon {
@@ -104,7 +109,7 @@
   margin: 0px 3px 10px;
   font-size: 11px;
   font-weight: 900;
-}
+} */
 
 .center .button {
   background-color: transparent;
@@ -130,16 +135,16 @@
   border-color: #000;
 }
 .timer {
-  display: flex;
-  gap: 30px;
-  position: relative;
-  left: 300px;
-  right: 0;
+  display: grid;
+  grid-template-rows: .1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  scale: 0.7;
 }
 .timer .time_text {
-  position: relative;
-  left: 150px;
-  top: -50px;
+  text-align: center;
+
 }
 .timer .circle {
   position: relative;
@@ -211,42 +216,88 @@
   margin: 0;
   padding: 0;
 }
+.but {
+  display: flex;
+  background-color: #000;
+  width: 100px;
+}
 
 @media (max-width:1000px) {
+  .center {
+    width: 95%;
+    padding: 20px;
+  }
+  #hud {
+    scale: 0.8;
+  }
   .timer {
-    left: 0px;
-    top: 20px;
+    scale: 0.5;
+    gap: 10px;
   }
   .timer .time_text {
-    display: none;
+    font-size: 13px;
   }
 }
 
 @media (max-width:650px) {
   .center {
+    display: block;
+    border-top-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    border-width: 2px;
+  }
+  .enter {
+    margin-bottom: 70px;
+  }
+  #hud {
+    grid-template-columns: 1fr;
+    grid-template-rows: .5fr .5fr;
+    gap: 30px;
+    scale: 0.65;
+  }
+  #hud-item:first-child {
+    grid-row: 2 / -1;
+  }
+  .choice-container {
     width: 100%;
+    font-size: 14px;
+  }
+  .choice-prefix {
+    padding: 15px 25px;
+  }
+  .choice-text {
+    padding: 15px;
+  }
+  #question {
+    font-size: 16px;
   }
 }
 
 @media (max-width:500px) {
   .center {
-    padding: 0;
-  }
-  #hud {
+    padding: 5px;
     display: block;
-  }
-  .timer {
-    left: 100px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding-bottom: 30px;
   }
   .choice-container {
     width: 100%;
+    justify-self: start;
   }
-  #progressBar {
-    width: 200px;
-    margin-left: 100px;
+  .enter {
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 100px;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 40px;
   }
-  #progressText {
-    font-size: 15px;
-    margin: 15px 0 -10px;
+  #hud-item:first-child {
+    grid-row: 2 / -1;
   }
+  #hud {
+    scale: 0.5;
+  }
+
 }

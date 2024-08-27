@@ -433,6 +433,17 @@ let questions = [
   },
 ];
 
+const timeee = localStorage.getItem('mostRecentScore');
+
+function buttClicked() {
+  return window.location.assign("restart.html");
+  // const finalScore = document.getElementById('finalScore');
+  // const mostRecentScore = localStorage.getItem('mostRecentScore');
+  // finalScore.innerText = mostRecentScore;
+  //   timeee 
+  }
+
+
 const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 52;
 
