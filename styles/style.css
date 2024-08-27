@@ -159,6 +159,10 @@ body {
     width: 100px;
     transform: translate(220px, 90px);
   }
+  .container .box {
+    border-top-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+  }
   .container .box .section{
     grid-template-rows: 100px 50px .1fr 50px;
   }
@@ -170,8 +174,6 @@ body {
 @media (max-width:550px) {
   .container .box {
     width: 100%;
-    border-top-left-radius: 60px;
-    border-bottom-right-radius: 60px;
   }
   .container::after {  
     display: none;
