@@ -23,7 +23,7 @@
           <li>4. You can't exit from the Quiz while you're playing.</li>
           <li>5. You'll get points on the basis of your correct answers.</li>
         </ul>
-        <div class="button" id="start" onclick="startPlaying()">
+        <div class="button" id="start">
           Play
         </div>
       </div>
@@ -31,9 +31,10 @@
   </div>
 
   <script>
-    function startPlaying() {
+    startPlaying = document.querySelector('#start')
+    startPlaying.addEventListener('click', () => {
       window.location.assign("./quiz.html");
-    }
+    })
   </script>
 
 </body>

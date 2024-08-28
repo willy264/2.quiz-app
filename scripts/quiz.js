@@ -1,13 +1,14 @@
-const question = document.getElementById("question");
-const choices = Array.from(document.getElementsByClassName("choice-text"));
-const progressText = document.getElementById("progressText");
-const scoreText = document.getElementById("score");
-const progressBarFull = document.getElementById("progressBarFull");
-let currentQuestion = {};
-let acceptingAnswers = false;
-let score = 0;
-let questionCounter = 0;
-let availableQuesions = [];
+const question = document.getElementById("question"),
+           choices = Array.from(document.getElementsByClassName("choice-text")),
+           progressText = document.getElementById("progressText"),
+           scoreText = document.getElementById("score");
+           progressBarFull = document.getElementById("progressBarFull"),
+           quitButton = document.querySelector('.quitButton');
+
+let currentQuestion = {},
+       acceptingAnswers = false,
+       score = 0,
+       availableQuesions = [];
 
 let questions = [
   {
@@ -433,15 +434,10 @@ let questions = [
   },
 ];
 
-const timeee = localStorage.getItem('mostRecentScore');
 
-function buttClicked() {
+quitButton.addEventListener('click', () => {
   return window.location.assign("restart.html");
-  // const finalScore = document.getElementById('finalScore');
-  // const mostRecentScore = localStorage.getItem('mostRecentScore');
-  // finalScore.innerText = mostRecentScore;
-  //   timeee 
-  }
+})
 
 
 const CORRECT_BONUS = 1;
@@ -462,7 +458,13 @@ startGame = () => {
 
 getNewQuestion = () => {
   clearInterval(counter);
+  
+  if (ss.style.stroke === 'orange') {
+    ss.style.stroke = 'yellow'
+  }
+
   startTimer(15);
+
   if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
 
@@ -500,6 +502,7 @@ choices.forEach(choice => {
 
     if (classToApply === "correct") {
       incrementScore(CORRECT_BONUS);
+      localStorage.setItem("mostRecentScore", score);
     } 
 
     selectedChoice.parentElement.classList.add(classToApply);
@@ -513,7 +516,7 @@ choices.forEach(choice => {
 });
 
 
-startTimer = (time) =>  {
+startTimer = (time) =>  {  
   counter = setInterval(function(){
     timeCount.textContent = time
     time--
@@ -521,12 +524,18 @@ startTimer = (time) =>  {
     ss.style.strokeDashoffset = 0 - (440 * time) / 15;
     timeCount.innerHTML = time + '<br><p>Seconds</p>'
 
+
+    if (time <= 3) {
+      ss.style.stroke = 'orange';
+    }
+
     if (time < 1) {
       clearInterval(counter)
       setTimeout(() => {
         getNewQuestion();
       }, 1000);
-    }
+    }      
+
   }, 1000);
 }
 
