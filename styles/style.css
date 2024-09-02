@@ -85,17 +85,17 @@ body {
   align-items: center;
 }
 .container .box .section h1 {
-  font-size: 55px;
+  font-size: 85px;
 }
 .container .box .section h3 {
-  font-size: 18px;
+  font-size: 33px;
 }
 .container .box .section ul {
   display: grid;
   gap: 10px;
 }
 .container .box .section ul li {
-  font-size: 12px;
+  font-size: 20px;
 }
 .button {
   border-color: transparent;
@@ -120,6 +120,7 @@ body {
     #aeff00 100%
   ) border-box;
   border: 3px solid transparent; 
+  font-size: 25px;
 }
 .button#start:hover {
   background-color: #fff;
